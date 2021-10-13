@@ -5,6 +5,9 @@ import (
 )
 
 func Hello(name string) string {
+	if name == "" {
+		return ""
+	}
 	return fmt.Sprintf("Hello, %s", name)
 }
 
