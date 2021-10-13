@@ -2,7 +2,10 @@ name: Test of github action
 on: [push]
 jobs:
   compile:
-    runs-on: macos-11
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-11]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
       - name: Setup Go
