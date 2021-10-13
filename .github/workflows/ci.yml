@@ -1,0 +1,18 @@
+name: Test of github action
+on: [push]
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v2
+      - name: Setup Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.17
+      - name: Build
+        run: |
+          go version
+          go build -o output/
+      - name: Run
+        run: |
+          ./output/action_test
