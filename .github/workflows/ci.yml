@@ -1,6 +1,7 @@
 name: Test of github action
 on:
   push:
+    branches: master
     tags:
      - 'v*'
 jobs:
