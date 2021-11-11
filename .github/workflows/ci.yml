@@ -1,5 +1,8 @@
 name: Test of github action
-on: [push]
+on:
+  push:
+    tags:
+     - 'v*'
 jobs:
   compile:
     strategy:
